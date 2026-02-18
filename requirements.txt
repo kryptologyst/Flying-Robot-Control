@@ -1,0 +1,57 @@
+# Modern Flying Robot Control Dependencies
+
+# Core scientific computing
+numpy>=1.24.0
+scipy>=1.10.0
+matplotlib>=3.7.0
+scikit-learn>=1.3.0
+
+# Control and optimization
+casadi>=3.6.0
+cvxpy>=1.3.0
+control>=0.9.0
+
+# Physics simulation
+pybullet>=3.2.5
+gymnasium>=0.29.0
+
+# Robotics libraries
+pinocchio>=2.6.0
+spatialmath-python>=1.0.0
+numpy-quaternion>=0.1.0
+
+# State estimation
+filterpy>=1.4.5
+
+# Configuration and logging
+pyyaml>=6.0
+hydra-core>=1.3.0
+omegaconf>=2.3.0
+loguru>=0.7.0
+
+# Visualization and demos
+streamlit>=1.25.0
+plotly>=5.15.0
+open3d>=0.17.0
+
+# ROS 2 (optional)
+rclpy>=3.3.0
+tf2-py>=0.25.0
+geometry-msgs>=4.2.0
+sensor-msgs>=4.2.0
+nav-msgs>=4.2.0
+
+# Development tools
+pytest>=7.4.0
+pytest-cov>=4.1.0
+black>=23.7.0
+ruff>=0.0.280
+mypy>=1.5.0
+pre-commit>=3.3.0
+
+# Type hints
+typing-extensions>=4.7.0
+
+# Jupyter notebooks (optional)
+jupyter>=1.0.0
+ipywidgets>=8.0.0

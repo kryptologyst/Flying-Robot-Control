@@ -1,0 +1,89 @@
+# Quadrotor Control Configuration
+
+# Quadrotor physical parameters
+quadrotor:
+  mass: 1.0  # kg
+  arm_length: 0.25  # m
+  gravity: 9.81  # m/s²
+  max_thrust: 20.0  # N per motor
+  max_torque: 2.0  # N⋅m per motor
+  max_velocity: 10.0  # m/s
+  max_angular_velocity: 5.0  # rad/s
+  drag_coefficient: 0.1
+
+# PID Controller parameters
+pid:
+  position:
+    kp: [1.0, 1.0, 1.0]
+    ki: [0.1, 0.1, 0.1]
+    kd: [0.5, 0.5, 0.5]
+  attitude:
+    kp: [2.0, 2.0, 1.0]
+    ki: [0.05, 0.05, 0.05]
+    kd: [0.3, 0.3, 0.3]
+  limits:
+    max_position_error: 10.0
+    max_velocity_error: 5.0
+    max_integral_windup: 2.0
+    max_control_output: 20.0
+    min_control_output: 0.0
+
+# LQR Controller parameters
+lqr:
+  Q: [10.0, 10.0, 10.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.1, 0.1, 0.1, 0.1]
+  R: [0.1, 0.1, 0.1, 0.1]
+
+# MPC Controller parameters
+mpc:
+  horizon: 10
+  dt: 0.1
+  max_thrust: 20.0
+  min_thrust: 0.0
+  max_torque: 2.0
+  position_weight: 10.0
+  velocity_weight: 1.0
+  attitude_weight: 1.0
+  angular_velocity_weight: 0.1
+  control_weight: 0.1
+  terminal_weight: 100.0
+
+# Geometric Controller parameters
+geometric:
+  kx: 1.0
+  kv: 1.0
+  kr: 1.0
+  kw: 1.0
+  kR: 1.0
+  kw_omega: 1.0
+
+# Simulation parameters
+simulation:
+  dt: 0.01  # s
+  duration: 10.0  # s
+  initial_position: [0.0, 0.0, 0.0]
+  initial_velocity: [0.0, 0.0, 0.0]
+  initial_attitude: [0.0, 0.0, 0.0]
+  initial_angular_velocity: [0.0, 0.0, 0.0]
+  target_position: [5.0, 5.0, 5.0]
+  target_velocity: [0.0, 0.0, 0.0]
+  target_attitude: [0.0, 0.0, 0.0]
+  target_angular_velocity: [0.0, 0.0, 0.0]
+
+# Visualization parameters
+visualization:
+  plot_trajectory: true
+  plot_errors: true
+  plot_control_signals: true
+  plot_attitude: true
+  plot_velocity: true
+  plot_angular_velocity: true
+  save_plots: true
+  plot_format: "png"
+  plot_dpi: 300
+
+# Logging parameters
+logging:
+  level: "INFO"
+  save_data: true
+  data_format: "csv"
+  log_interval: 10  # Log every N steps
